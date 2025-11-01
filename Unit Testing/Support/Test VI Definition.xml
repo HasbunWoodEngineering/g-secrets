@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Clean VI 1.vi</Name>
+    <Description>This VI does not contain any secrets</Description>
+    <Numeric_Indicators>
+      <Labels>Indicator 1</Labels>
+      <Labels>Indicator 2</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 1</Labels>
+      <Labels>String Control 2</Labels>
+      <Default_Values>Start with this string...</Default_Values>
+      <Default_Values>Continue with this one...</Default_Values>
+    </String_Controls>
+    <Free_Labels>
+      <Text>Some further information</Text>
+      <Text>And even some more...</Text>
+    </Free_Labels>
+    <Front_Panel_Labels>
+      <Text>This is an explanation on the front panel.</Text>
+    </Front_Panel_Labels>
+    <String_Constants>
+      <Text>A constant string</Text>
+      <Text>And another constant string</Text>
+    </String_Constants>
+  </Array>
+  <Array>
+    <Name>Clean VI 2.vi</Name>
+    <Description>This VI also does not contain any secrets</Description>
+    <Numeric_Indicators>
+      <Labels>Indicator 3</Labels>
+      <Labels>Indicator 4</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 3</Labels>
+      <Labels>String Control 4</Labels>
+      <Default_Values>Dummy text</Default_Values>
+      <Default_Values>And more text</Default_Values>
+    </String_Controls>
+    <Free_Labels>
+      <Text>Very important tipps</Text>
+      <Text>Additional very important tipps</Text>
+    </Free_Labels>
+    <Front_Panel_Labels>
+      <Text>This front panel is awesome</Text>
+    </Front_Panel_Labels>
+    <String_Constants>
+      <Text>Constant String 1</Text>
+      <Text>Constant String 2</Text>
+    </String_Constants>
+  </Array>
+  <Array>
+    <Name>Dirty VI 1.vi</Name>
+    <Description>secret-stuff-7 is a secret that found its way into this VIs description.</Description>
+    <Numeric_Indicators>
+      <Labels>And another one here abc-99999</Labels>
+      <Labels>Indicator 4</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 3</Labels>
+      <Labels>def_777</Labels>
+      <Default_Values>This default value contains secret-stuff-8</Default_Values>
+      <Default_Values>And more text</Default_Values>
+    </String_Controls>
+    <Free_Labels>
+      <Text>Very important tipps</Text>
+      <Text>OMG another one abc-78945</Text>
+    </Free_Labels>
+    <Front_Panel_Labels>
+      <Text>def_456</Text>
+    </Front_Panel_Labels>
+    <String_Constants>
+      <Text>secret-stuff-2</Text>
+      <Text>Constant String 2</Text>
+    </String_Constants>
+  </Array>
+</unnamed_cluster>

@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Clean Cluster 1.ctl</Name>
+    <Description>This Cluster does not contain any secrets</Description>
+    <Numeric_Indicators>
+      <Labels>Indicator 1</Labels>
+      <Labels>Indicator 2</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 1</Labels>
+      <Labels>String Control 2</Labels>
+      <Default_Values>Start with this string...</Default_Values>
+      <Default_Values>Continue with this one...</Default_Values>
+    </String_Controls>
+    <Front_Panel_Labels>
+      <Text>This is an explanation on the front panel.</Text>
+    </Front_Panel_Labels>
+  </Array>
+  <Array>
+    <Name>Clean Cluster 2.ctl</Name>
+    <Description>This Cluster also does not contain any secrets</Description>
+    <Numeric_Indicators>
+      <Labels>Indicator 3</Labels>
+      <Labels>Indicator 4</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 3</Labels>
+      <Labels>String Control 4</Labels>
+      <Default_Values>Dummy text</Default_Values>
+      <Default_Values>And more text</Default_Values>
+    </String_Controls>
+    <Front_Panel_Labels>
+      <Text>This front panel is awesome</Text>
+    </Front_Panel_Labels>
+  </Array>
+  <Array>
+    <Name>Dirty Cluster 1.ctl</Name>
+    <Description>This Cluster contains secrets in every string storage, starting here def_ABC and followed by some text..</Description>
+    <Numeric_Indicators>
+      <Labels>secret-stuff-5</Labels>
+      <Labels>Indicator 4</Labels>
+    </Numeric_Indicators>
+    <String_Controls>
+      <Labels>String Control 3</Labels>
+      <Labels>abc-AAAAA</Labels>
+      <Default_Values>def_456 followed by some text</Default_Values>
+      <Default_Values>And more text</Default_Values>
+    </String_Controls>
+    <Front_Panel_Labels>
+      <Text>secret-stuff-1</Text>
+    </Front_Panel_Labels>
+  </Array>
+</unnamed_cluster>

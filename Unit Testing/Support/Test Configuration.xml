@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Fictive Secret 1</Name>
+    <Regex>abc-[0-9a-zA-Z]{5}</Regex>
+  </Array>
+  <Array>
+    <Name>Fictive Secret 2</Name>
+    <Regex>def_[0-9a-zA-Z]{3}</Regex>
+  </Array>
+  <Array>
+    <Name>Fictive Secret 3</Name>
+    <Regex>secret-stuff-[0-9]</Regex>
+  </Array>
+</unnamed_cluster>

@@ -1,0 +1,59 @@
+name: Unit Testing
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  unit-testing:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Unit Tests
+        id: unit_tests
+        shell: pwsh
+        run: |
+            $ErrorActionPreference = 'Continue'
+            $PSNativeCommandUseErrorActionPreference = $false  # ensure non-zero exit code isn't thrown as error
+
+            # Ordner anlegen
+            New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\reports" | Out-Null
+    
+            & g-cli --lv-ver ${{ vars.LABVIEW_VERSION }} `
+            --arch ${{ vars.LABVIEW_ARCH }} `
+            --kill `
+            "${{ vars.CARAYA_CLI_EXECUTION_ENGINE }}" `
+            -- `
+            -s "$env:GITHUB_WORKSPACE" `
+            -x "$env:GITHUB_WORKSPACE\reports\unit-testing-report.xml"
+
+            $code = $LASTEXITCODE
+            Write-Host "Caraya CLI stopped with exit code: $code"
+
+            # Expose exit code as a step output
+            "exit_code=$code" >> $env:GITHUB_OUTPUT
+
+            if ($code -eq 7002) {
+              Write-Host "Unit tests failed (exit 7002). Treating as non-fatal so the report can be uploaded."
+              exit 0
+            } elseif ($code -ne 0) {
+              Write-Error "Unit testing failed with exit code $code"
+              exit $code
+            }
+
+      - name: Upload Unit Testing report
+        uses: actions/upload-artifact@v4
+        with:
+            name: unit-testing-report
+            path: reports/unit-testing-report.xml
+
+      - name: Fail if Unit Tests failed
+        if: steps.unit_tests.outputs.exit_code == '7002'
+        shell: bash
+        run: |
+          echo "Unit Tests failed. Failing the job after artifact upload."
+          exit 1

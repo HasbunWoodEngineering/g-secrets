@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Private Key</Name>
+    <Regex>-+BEGIN (?:[A-Z0-9 ]+ )?PRIVATE KEY(?: BLOCK)?-+[\s\S]+?-+END (?:[A-Z0-9 ]+ )?PRIVATE KEY(?: BLOCK)?-+</Regex>
+  </Array>
+  <Array>
+    <Name>AWS Access Key ID</Name>
+    <Regex>((?:ASIA|AKIA|AROA|AIDA)([A-Z0-9]{16}))</Regex>
+  </Array>
+  <Array>
+    <Name>Github Project Access Token</Name>
+    <Regex>ghp_[0-9a-zA-Z]{36}</Regex>
+  </Array>
+  <Array>
+    <Name>Github App Token</Name>
+    <Regex>(?:ghu|ghs)_[0-9a-zA-Z]{36}</Regex>
+  </Array>
+  <Array>
+    <Name>Github Oauth</Name>
+    <Regex>gho_[0-9a-zA-Z]{36}</Regex>
+  </Array>
+  <Array>
+    <Name>Github Refresh Token</Name>
+    <Regex>ghr_[0-9a-zA-Z]{36}</Regex>
+  </Array>
+  <Array>
+    <Name>Gitlab Project Access Token</Name>
+    <Regex>glpat-[\w-]{20,}</Regex>
+  </Array>
+</unnamed_cluster>

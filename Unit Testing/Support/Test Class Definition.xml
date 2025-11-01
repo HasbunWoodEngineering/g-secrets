@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Clean Class.lvclass</Name>
+    <Description>This is a class without any secrets</Description>
+  </Array>
+  <Array>
+    <Name>Dirty Class.lvclass</Name>
+    <Description>This class contains this secret in the description abc-12345</Description>
+  </Array>
+</unnamed_cluster>

@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<unnamed_cluster>
+  <Array>
+    <Name>Clean Project.lvproj</Name>
+    <Description>This is a project without any secrets</Description>
+    <Elements>Clean VI 1.vi</Elements>
+    <Elements>Clean VI 2.vi</Elements>
+	<Elements>Clean Class.lvclass</Elements>
+	<Elements>Clean Cluster 1.ctl</Elements>
+	<Elements>Clean Cluster 2.ctl</Elements>
+  </Array>
+  <Array>
+    <Name>Dirty Project.lvproj</Name>
+    <Description>This project contains dirty VIs and also a secret abc-55555 in the description </Description>
+    <Elements>Clean VI 1.vi</Elements>
+    <Elements>Clean VI 2.vi</Elements>
+    <Elements>Dirty VI 1.vi</Elements>
+	<Elements>Dirty Class.lvclass</Elements>
+	<Elements>Clean Cluster 1.ctl</Elements>
+	<Elements>Clean Cluster 2.ctl</Elements>
+	<Elements>Dirty Cluster 1.ctl</Elements>
+  </Array>
+</unnamed_cluster>

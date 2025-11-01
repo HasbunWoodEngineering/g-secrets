@@ -1,0 +1,59 @@
+name: VI Analyzer
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  vi-analyzer:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run VI Analyzer (Windows)
+        id: vi_cli
+        shell: pwsh
+        run: |
+            $ErrorActionPreference = 'Continue'
+            $PSNativeCommandUseErrorActionPreference = $false  # ensure non-zero exit code isn't thrown as error
+
+            # Ordner anlegen
+            New-Item -ItemType Directory -Force -Path "$env:GITHUB_WORKSPACE\reports" | Out-Null
+    
+            & LabVIEWCLI `
+            -OperationName RunVIAnalyzer `
+            -ConfigPath "$env:GITHUB_WORKSPACE\cicd\general.viancfg" `
+            -ReportSaveType "ASCII" `
+            -ReportPath "$env:GITHUB_WORKSPACE\reports\vi-analyzer-report.txt" `
+            -LabVIEWPath "${{ vars.LABVIEWPATH }}" `
+            -PortNumber ${{ vars.PORTNUMBER }}
+
+            $code = $LASTEXITCODE
+            Write-Host "LabVIEWCLI exit code: $code"
+
+            # Expose exit code as a step output
+            "exit_code=$code" >> $env:GITHUB_OUTPUT
+
+            if ($code -eq 3) {
+              Write-Host "VI Analyzer found issues (exit 3). Continuing so the report can be uploaded."
+              exit 0
+            } elseif ($code -ne 0) {
+              Write-Error "LabVIEWCLI failed with exit code $code"
+              exit $code
+            }
+
+      - name: Upload VI Analyzer report
+        uses: actions/upload-artifact@v4
+        with:
+            name: vi-analyzer-report
+            path: reports/vi-analyzer-report.txt
+
+      - name: Fail if VI Analyzer returned 3
+        if: steps.vi_cli.outputs.exit_code == '3'
+        shell: bash
+        run: |
+          echo "VI Analyzer reported issues (exit 3). Failing the job after artifact upload."
+          exit 1
