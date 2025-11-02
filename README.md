@@ -49,7 +49,7 @@ If any secrets are found, the VI raises a **custom error \(-8000\)**: ```Code Co
 
 The intended usage is to run **g-secrets** from the command line via [G CLI](https://www.vipm.io/package/wiresmith_technology_lib_g_cli/) as a *pre-commit hook*, so that no secrets land in your repository.
 
-You can install the package through **vipm.io**. The package contains a CLI interface that will be installed in `<LabVIEW>\vi.lib\G CLI Tools, allowing you to invoke the tool directly through **g-cli**.
+You can install the package through [vipm.io](https://www.vipm.io/package/hasbun_wood_engineering_lib_g_secrets/). The package contains a CLI interface that will be installed in `<LabVIEW>\vi.lib\G CLI Tools, allowing you to invoke the tool directly through **g-cli**.
 
 ---
 
@@ -193,7 +193,7 @@ Full details and license texts are available in [THIRD_PARTY_LICENSES.txt](THIRD
 
 If you just want to **use the package** (for example, install it in LabVIEW or integrate it into another system):
 
-1. Install **g-secrets** via the **[VI Package Manager (VIPM)](https://www.vipm.io/)**.
+1. Install **g-secrets** via the **[VI Package Manager (VIPM)](https://www.vipm.io/package/hasbun_wood_engineering_lib_g_secrets/)**.
 
 2. VIPM will automatically install all required **runtime dependencies**.
 
